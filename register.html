@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Summer Web Dev Bootcamp</title>
+  <link rel="stylesheet" type="text/css" href="register.css" />
+  <link rel="icon" type="" href="summer.png.jpg"/>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Register for the Summer Bootcamp</h1>
+      <p>Secure your child's spot in our 2025 online web development program</p>
+    </div>
+  </header>
+
+  <section class="contact">
+    <div class="container">
+      <h2>Complete Registration</h2>
+      <form id="registerForm">
+        <input type="text" id="fullName" placeholder="Child's Full Name" required />
+        <input type="email" id="parentEmail" placeholder="Parent's Email Address" required />
+        <input type="tel" id="phone" placeholder="Phone Number (Optional)" />
+        <select id="ageGroup" required>
+          <option value="">Select Age Group</option>
+          <option value="7-10">Ages 7 - 10</option>
+          <option value="11-13">Ages 11 - 13</option>
+          <option value="14-17">Ages 14 - 17</option>
+        </select>
+        <button type="submit">Submit Registration</button>
+        <p id="registerMessage"></p>
+      </form>
+      <br />
+      <a href="index.html" class="cta-button">← Back to Home</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Web Kids Bootcamp. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

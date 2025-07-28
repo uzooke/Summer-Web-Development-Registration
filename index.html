@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Summer Web Dev Class for Kids</title>
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <link rel="icon" type="" href="summer.png.jpg"/>
+</head>
+<body>
+  <script>
+   // For email contact on index.html
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contactForm");
+  const registerForm = document.getElementById("registerForm");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message");
+
+      if (validateEmail(email)) {
+        message.style.color = "green";
+        message.textContent = "Thanks! We'll reach out to you shortly.";
+        contactForm.reset();
+      } else {
+        message.style.color = "red";
+        message.textContent = "Please enter a valid email address.";
+      }
+    });
+  }
+
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("fullName").value;
+      const email = document.getElementById("parentEmail").value;
+      const ageGroup = document.getElementById("ageGroup").value;
+      const msg = document.getElementById("registerMessage");
+
+      if (name && validateEmail(email) && ageGroup) {
+        msg.style.color = "lime";
+        msg.textContent = "🎉 Registration Successful! We'll contact you soon.";
+        registerForm.reset();
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "Please fill in all required fields correctly.";
+      }
+    });
+  }
+
+  function validateEmail(email) {
+    const re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    return re.test(String(email).toLowerCase());
+  }
+});
+
+}
+
+  </script>
+  <header>
+    <div class="container">
+      <h1>Summer 2025 Web Development Bootcamp</h1>
+      <p>Give your child the digital edge they need this holiday!</p>
+      <a href="register.html" class="cta-button">Register Now</a>
+      <img src="coding-web-development-svgrepo-com.svg" alt="Web Development Illustration" class="hero-img">
+      <a href="mailto:quizlite0@gmail.com?subject=More%20Info%20About%20the%20Web%20Dev%20Bootcamp" class="secondary-button">More Info</a>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="container">
+      <h2>Why Enroll Your Child?</h2>
+      <ul>
+        <li>💻 Learn real coding skills: HTML, CSS, JavaScript</li>
+        <li>🧠 Boost creativity, problem-solving, and confidence</li>
+        <li>👨‍🏫 Taught by top web developers from Microsoft & Google</li>
+        <li>🏡 100% online and safe – Learn from home</li>
+        <li>📅 Flexible schedule – fits into your family’s plans</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="curriculum">
+    <div class="container">
+      <h2>What They'll Learn</h2>
+      <div class="topics">
+        <div class="topic">
+          <h3>HTML</h3>
+          <p>Build the structure of websites with hands-on projects.</p>
+        </div>
+        <div class="topic">
+          <h3>CSS</h3>
+          <p>Design beautiful websites with color, layout & animation.</p>
+        </div>
+        <div class="topic">
+          <h3>JavaScript</h3>
+          <p>Make websites interactive with real-world logic and effects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Interested? Get in Touch!</h2>
+      <p>Leave your email below and we'll send you the registration details.</p>
+      <form id="contactForm">
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <button type="submit">Submit</button>
+        <p id="message"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Web Kids Bootcamp. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
