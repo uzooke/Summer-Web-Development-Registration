@@ -40,7 +40,41 @@
     <p>&copy; 2025 Web Kids Bootcamp. All Rights Reserved.</p>
   </footer>
 
-  <script src="register.js"></script>
+  <script>
+     <script>
+    // script.js
+document.getElementById('registerForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Collect form data
+  const data = {
+    fullName: document.getElementById('fullName').value,
+    parentEmail: document.getElementById('parentEmail').value,
+    phone: document.getElementById('phone').value,
+    ageGroup: document.getElementById('ageGroup').value
+  };
+
+  // Replace this with your deployed Apps Script Web App URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzMRVe-HQ3SrPixOAKNxwF-rEI6fWcD0EeKa6fJGMiRV8t7wAPsZ-VrbH19XkpC45mZ/exec';
+
+  fetch(scriptURL, {
+    method: 'POST',
+    mode: 'no-cors', // no-cors lets Apps Script receive the request without CORS errors
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    document.getElementById('registerMessage').textContent = 'Registration successful!';
+    document.getElementById('registerForm').reset();
+  })
+  .catch(err => {
+    console.error('Error!', err);
+    document.getElementById('registerMessage').textContent = 'There was an error submitting your registration.';
+  });
+});
+  </script>
+  </script>
   
 </body>
 </html>
+
