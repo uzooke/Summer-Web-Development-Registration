@@ -18,10 +18,10 @@
   <section class="contact">
     <div class="container">
       <h2>Complete Registration</h2>
-      <form id="registerForm">
-        <input type="text" id="fullName" placeholder="Child's Full Name" required />
-        <input type="email" id="parentEmail" placeholder="Parent's Email Address" required />
-        <input type="tel" id="phone" placeholder="Phone Number (Optional)" />
+      <form id="registerForm" action="register.php" method="post">
+        <input type="text" id="fullName" placeholder="Child's Full Name" required name="fullName" />
+        <input type="email" id="parentEmail" placeholder="Parent's Email Address" required name="parentEmail" />
+        <input type="tel" id="phone" placeholder="Phone Number (Optional)" name="phone" />
         <select id="ageGroup" required>
           <option value="">Select Age Group</option>
           <option value="7-10">Ages 7 - 10</option>
@@ -41,7 +41,6 @@
   </footer>
 
   <script>
-     <script>
     // script.js
 document.getElementById('registerForm').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -73,8 +72,5 @@ document.getElementById('registerForm').addEventListener('submit', function (e) 
   });
 });
   </script>
-  </script>
-  
 </body>
 </html>
-
